@@ -4,10 +4,10 @@ pkgver=1.0.0
 pkgrel=1
 pkgdesc="A simple CLI tool to create desktop web applications on Linux"
 arch=('any')
-url="https://github.com/yourusername/webcreater"
+url="https://github.com/Swarnim114/webapp-creator"
 license=('MIT')
 depends=('python')
-source=("webapp_creator.py")
+source=("https://raw.githubusercontent.com/Swarnim114/webapp-creator/main/webapp_creator.py")
 sha256sums=('SKIP')
 
 package() {
