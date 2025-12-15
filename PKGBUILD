@@ -8,7 +8,7 @@ url="https://github.com/Swarnim114/webapp-creator"
 license=('MIT')
 depends=('python')
 source=("https://raw.githubusercontent.com/Swarnim114/webapp-creator/main/webapp_creator.py")
-sha256sums=('SKIP')
+sha256sums=('5ec20913040964ea852bb204b577beab99f4b32e61a41e7631e077484ffbb8a8')
 
 package() {
     # Create the destination directory
