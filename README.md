@@ -1,26 +1,62 @@
 # WebApp Creator
 
-A simple Python script to create desktop web applications on Linux.
+A simple CLI tool to create desktop web applications on Linux. It generates standard `.desktop` files, allowing your favorite websites to appear in your application menu and launch in their own window.
 
 ## Features
-- Supports multiple browsers (Google Chrome, Chromium, Brave, Edge, Vivaldi).
-- Downloads icons automatically from a URL.
-- Creates standard `.desktop` files in `~/.local/share/applications`.
+- **Auto-Detection**: Automatically finds installed browsers (Chrome, Chromium, Brave, Edge, Vivaldi, Firefox, Epiphany).
+- **Smart Icons**: Automatically fetches high-quality favicons if no icon URL is provided.
+- **Native Integration**: Sets `StartupWMClass` for proper window grouping in docks/taskbars.
+- **Management**: Built-in option to list and remove created webapps.
+- **CLI Support**: Scriptable via command-line arguments.
+
+## Installation
+
+### Arch Linux (AUR)
+You can install `webapp-creator` directly from the AUR using your favorite helper (e.g., `yay` or `paru`):
+
+```bash
+yay -S webapp-creator
+```
+
+### Manual Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Swarnim114/webapp-creator.git
+   cd webapp-creator
+   ```
+
+2. Make the script executable and link it to your path:
+   ```bash
+   chmod +x webapp_creator.py
+   sudo ln -s "$(pwd)/webapp_creator.py" /usr/local/bin/webapp-creator
+   ```
 
 ## Usage
 
-1. Ensure you have Python 3 installed.
-2. Run the script:
-   ```bash
-   python3 webapp_creator.py
-   ```
-3. Follow the prompts:
-   - Enter the name of your app.
-   - Enter the URL.
-   - Select your preferred browser.
-   - (Optional) Provide an icon URL.
+### Interactive Mode
+Simply run the command and follow the prompts:
+```bash
+webapp-creator
+```
+
+### Command Line Mode
+You can skip the prompts by passing arguments:
+
+```bash
+# Create a YouTube app using Chrome
+webapp-creator -n "YouTube" -u "youtube.com" -b google-chrome
+
+# Create a Gmail app with a specific icon
+webapp-creator -n "Gmail" -u "mail.google.com" -i "https://example.com/gmail.png"
+```
+
+### Remove WebApps
+To list and delete installed webapps:
+```bash
+webapp-creator --remove
+```
 
 ## Requirements
 - Linux OS
 - Python 3
-- A supported web browser installed (Chrome, Chromium, Brave, etc.)
+- A supported web browser

@@ -1,6 +1,6 @@
 # Maintainer : swarnim.114@gmail.com
 pkgname=webapp-creator
-pkgver=1.0.0
+pkgver=1.1.0
 pkgrel=1
 pkgdesc="A simple CLI tool to create desktop web applications on Linux"
 arch=('any')
